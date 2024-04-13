@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Form from './components/Form/Form'
 import { TodoItem } from './components/TodoItem/TodoItem'
@@ -8,6 +8,12 @@ import axios, { AxiosError } from 'axios'
 function App(){
   const[items,setItems]=useState<TodoItem[]>([])
   const url="http://localhost:3004"
+
+  useEffect(()=>{
+    axios.get<TodoItem[]>("http://localhost:3004/todos")
+    .then((res)=>setItems(res.data))
+      
+  },[])
 
   const AddTodo=async(title:string)=>{
     try{

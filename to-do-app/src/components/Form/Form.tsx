@@ -12,10 +12,14 @@ export default function Form({AddTodo}:FormProps){
         if(item==="") return
         await AddTodo(item);
     }
+
+    function handleOnChange(e:React.ChangeEvent<HTMLInputElement>){
+        setItem(e.target.value)
+    }
     return(
         <form onSubmit={handleOnSubmit}>
-            <input type="text" onChange={e=>setItem(e.target.value)}/>
-            <button>Add ToDo</button>
+                <input type="text" onChange={handleOnChange}/>
+                <button type="submit" className="btn btn-primary mx-1">Add ToDo</button>
         </form>
     )
 }

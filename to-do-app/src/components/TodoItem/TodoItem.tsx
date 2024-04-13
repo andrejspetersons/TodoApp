@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export type TodoItem={
@@ -33,10 +34,12 @@ export default function ToDo({item,DeleteTodo,UpdateTodo}:{item:TodoItem,DeleteT
                     onBlur={handleLostFocus}    
                     />
                     )
-                :(<div>{item.title}</div>)
-                }          
-            <button onClick={()=>setEdit(true)}>Edit</button>
-            <button onClick={hadleDeleteClick}>Delete</button>
+                :(<Link to={`todo/${item.title}/${item.id}`}>{item.title}</Link>)
+                }
+       
+                <button type="button" className="btn btn-outline-success btn-sm mx-1" onClick={()=>setEdit(true)}>Edit</button>
+                <button type="button" className="btn btn-outline-danger btn-sm mx-1" onClick={hadleDeleteClick}>Delete</button>
+
         </>
     );
     
