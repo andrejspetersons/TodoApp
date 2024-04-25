@@ -16,6 +16,8 @@ npm run dev
 ```
 npm run db
 ```
+![Untitleddesign-ezgif com-video-to-gif-converter](https://github.com/andrejspetersons/TodoApp/assets/127120169/b3faf4d6-b941-423c-b2cb-5e72cc52038f)
+
 [Server runs on http://localhost:3004](http://localhost:3004/todos)</p>
 ## Changes milestone
 ### 13.04.24 
